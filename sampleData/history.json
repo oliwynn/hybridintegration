@@ -1,0 +1,43 @@
+{
+  "userId": "1234",
+  "boughtItems": [
+    {
+      "productId": {},
+      "description": {},
+      "date": {},
+      "imageSrc": {}
+    },
+    {
+      "productId": {},
+      "description": {},
+      "date": {},
+      "imageSrc": {}
+    },
+    {
+      "productId": {},
+      "description": {},
+      "date": {},
+      "imageSrc": {}
+    }
+  ],
+  "viewedItems": [
+    {
+      "productId": {},
+      "description": {},
+      "date": {},
+      "imageSrc": {}
+    },
+    {
+      "productId": {},
+      "description": {},
+      "date": {},
+      "imageSrc": {}
+    },
+    {
+      "productId": {},
+      "description": {},
+      "date": {},
+      "imageSrc": {}
+    }
+  ]
+}
