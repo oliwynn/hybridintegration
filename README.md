@@ -1,2 +1,2 @@
-# hybridintegration
-Enabling digital transformation through hybridintegration
+# Enabling Digital Transformation through Hybrid Integration
+Enabling digital transformation through Hybrid Integration
