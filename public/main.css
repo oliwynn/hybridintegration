@@ -1,3 +1,7 @@
+html, body {
+    font-family: 'Quicksand', sans-serif;
+}
+
 .banner {
     height: 360px;
     background-image: url("images/jeans.jpg");
@@ -26,6 +30,16 @@
     background: #DDD;
     height: 100%;
     height: calc(100vh - 400px);
+    padding: 10px;
+}
+
+.history-item-box {
+    padding: 10px;
+}
+
+.history-item {
+    background: #AAA;
+    height: 100px;
 }
 
 .products {
@@ -68,12 +82,12 @@
 .banner-promo {
     color: white;
     padding-left: 50px;
-    padding-top: 200px;
+    padding-top: 180px;
 }
 
 .banner-promo h4 {
     margin: 0;
-    font-size: 5em;
+    font-size: 6em;
     background-color: rgba(0, 0, 0, 0.6);
 }
 

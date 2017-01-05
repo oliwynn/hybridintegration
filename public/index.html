@@ -8,6 +8,7 @@
     <title>Threads Online</title>
     <meta name="description" content="Fresh threads...">
     <meta name="author" content="The Sheemonster">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -41,6 +42,9 @@
         </div>
         <div class="row underneath">
             <div class="col-md-3 history">
+                <div class="history-item-box" v-for="item in historyItems">
+                    <div class="history-item"></div>
+                </div>
             </div>
             <div class="col-md-9 products row">
                 <div class="col-md-4 text-center product-block" v-for="product in products">

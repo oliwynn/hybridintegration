@@ -20,6 +20,13 @@ var app = new Vue({
         }, {
             name: ""
         }],
+        historyItems: [{
+            item: ""
+        }, {
+            item: ""
+        }, {
+            item: ""
+        }],
         selected: "",
         forecast: [{
             dow: "",
