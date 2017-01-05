@@ -1,0 +1,27 @@
+{
+  "name": "hybridintegration",
+  "version": "1.0.0",
+  "description": "Demo application showing integration between IBM Bluemix, API Connect and IIB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliwynn/hybridintegration.git"
+  },
+  "keywords": [
+    "APIC",
+    "Bluemix"
+  ],
+  "author": "Ed Shee and Oli Wynn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliwynn/hybridintegration/issues"
+  },
+  "homepage": "https://github.com/oliwynn/hybridintegration#readme",
+  "dependencies": {
+    "cfenv": "^1.0.3",
+    "express": "^4.14.0"
+  }
+}
