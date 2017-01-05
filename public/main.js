@@ -22,30 +22,48 @@ var app = new Vue({
         }]
     },
     methods: {
-        weatherAPI: function(path, qs, done) {
-            $.ajax({
-                url: path,
-                type: 'GET',
-                contentType: 'application/json',
-                data: qs,
-                success: function(data) {
-                    if (data.message == 401) {
-                        try {
-                            data.data = JSON.parse(data.data);
-                        } catch (e) {}
-                        done(data);
+        getWeather: function() {
+            weatherAPI("/api/forecast/daily", {
+                geocode: "51.51,0.13",
+                units: "m",
+                language: "en"
+            }, function(err, data) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    if (data.forecasts) {
+                        console.log(data.forecasts);
                     } else {
-                        done(null, data);
+                        console.log('error!!!');
                     }
-                },
-                error: function(xhr, textStatus, thrownError) {
-                    done(textStatus);
                 }
             });
         }
     }
 })
 
+
+function weatherAPI(path, qs, done) {
+    $.ajax({
+        url: path,
+        type: 'GET',
+        contentType: 'application/json',
+        data: qs,
+        success: function(data) {
+            if (data.message == 401) {
+                try {
+                    data.data = JSON.parse(data.data);
+                } catch (e) {}
+                done(data);
+            } else {
+                done(null, data);
+            }
+        },
+        error: function(xhr, textStatus, thrownError) {
+            done(textStatus);
+        }
+    });
+}
 /*
 weatherAPI("/api/forecast/daily", {
     geocode: geocode,

@@ -23,7 +23,7 @@ var appEnv = cfenv.getAppEnv();
 var weather_host = appEnv.services["weatherinsights"] ?
     appEnv.services["weatherinsights"][0].credentials.url // Weather credentials passed in
     :
-    ""; // or copy your credentials url here for standalone
+    "https://2fd74174-e8c3-4817-bcdd-96accabb2d12:Hl0xDwAkUz@twcservice.eu-gb.mybluemix.net"; // or copy your credentials url here for standalone
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
