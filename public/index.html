@@ -15,23 +15,23 @@
 <body>
     <div class="container-fluid" id="app">
         <div class="banner"></div>
-        <div class="context-bar">
-            <div class="row">
-                <div class="col-md-9 text-center" id="weather"></div>
-                <div class="pull-right col-md-3 text-center">
-                    <select id="weather_presets" name="weather_presets" style="width:200px; height:40px; margin:0px; background-color:#B7D2DD; font-size:14pt; font-weight:bold;" v-on:change="getWeather">
-						<option value="42.34,-75.18">New York</option>
-						<option value="45.43,-75.68">Ottawa</option>
-						<option value="51.51,0.13">London</option>
-						<option value="48.85,2.35">Paris</option>
-						<option value="41.90,12.50">Rome</option>
-						<option value="55.75,37.61">Moscow</option>
-						<option value="18.97,72.83">Mumbai</option>
-						<option value="27.70,85.33">Kathmandu</option>
-						<option value="39.91,116.38">Beijing</option>
-						<option value="35.68,139.68">Tokyo</option>
-					</select>
-                </div>
+        <div class="context-bar row">
+            <div class="col-md-3 text-center forecasts" v-for="day in forecast">
+                <p>{{day.dow}} <span><img class="weather-icon" :src="day.iconLink"></span> {{day.high}} / {{day.low}}</p>
+            </div>
+            <div class="pull-right col-md-3 text-center">
+                <select id="weather_presets" name="weather_presets" v-model="selected" style="width:200px; height:40px; margin:0px; background-color:#B7D2DD; font-size:14pt; font-weight:bold;" v-on:change="getWeather">
+					<option value="42.34,-75.18">New York</option>
+					<option value="45.43,-75.68">Ottawa</option>
+					<option value="51.51,0.13">London</option>
+					<option value="48.85,2.35">Paris</option>
+					<option value="41.90,12.50">Rome</option>
+					<option value="55.75,37.61">Moscow</option>
+					<option value="18.97,72.83">Mumbai</option>
+					<option value="27.70,85.33">Kathmandu</option>
+					<option value="39.91,116.38">Beijing</option>
+					<option value="35.68,139.68">Tokyo</option>
+				</select>
             </div>
         </div>
         <div class="row underneath">

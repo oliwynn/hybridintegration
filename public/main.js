@@ -19,11 +19,28 @@ var app = new Vue({
             name: 8
         }, {
             name: 9
+        }],
+        selected: "",
+        forecast: [{
+            dow: "",
+            iconLink: "",
+            high: "",
+            low: ""
+        }, {
+            dow: "",
+            iconLink: "",
+            high: "",
+            low: ""
+        }, {
+            dow: "",
+            iconLink: "",
+            high: "",
+            low: ""
         }]
     },
     methods: {
         getWeather: function() {
-            fetchWeather(this.value)
+            fetchWeather(this.selected)
         }
     }
 })
@@ -39,6 +56,12 @@ function fetchWeather(geo) {
         } else {
             if (data.forecasts) {
                 console.log(data.forecasts);
+                for (i = 0; i < 3; i++) {
+                    app.forecast[i].dow = data.forecasts[i + 1].dow;
+                    app.forecast[i].iconLink = "icons/" + data.forecasts[i + 1].day.icon_code + ".svg";
+                    app.forecast[i].high = data.forecasts[i + 1].max_temp;
+                    app.forecast[i].low = data.forecasts[i + 1].min_temp;
+                };
             } else {
                 console.log('error!!!');
             }
@@ -68,8 +91,6 @@ function weatherAPI(path, qs, done) {
         }
     });
 }
-
-var x = document.getElementById("demo");
 
 function getLocation() {
     if (navigator.geolocation) {

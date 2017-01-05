@@ -1,37 +1,52 @@
 .banner {
-  height: 360px;
-  background-image: url("images/jeans.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
+    height: 360px;
+    background-image: url("images/jeans.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
 }
 
 .container-fluid {
-  padding: 0 !important;
+    padding: 0 !important;
 }
 
 .context-bar {
-  height: 40px;
-  background: grey;
+    height: 40px;
+    background: grey;
 }
 
 .underneath {
-  height: calc(100vh - 400px);
-  background: blue;
+    height: calc(100vh - 400px);
+    background: blue;
 }
 
 .history {
-  background: red;
-  height: 100%;
+    background: red;
+    height: 100%;
 }
 
 .products {
-  background: yellow;
-  height: 100%;
+    background: yellow;
+    height: 100%;
 }
 
 .product-block {
-  line-height: 250px;
-  font-size: 10vh;
-  height: 250px;
+    line-height: 250px;
+    font-size: 10vh;
+    height: 250px;
+}
+
+.weather-icon {
+    height: 35px;
+    width: 35px;
+}
+
+.forecasts p {
+    font-size: 20px;
+    color: white;
+}
+
+.forecasts {
+    height: 40px;
+    line-height: 40px;
 }
