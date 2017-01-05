@@ -81,6 +81,23 @@ app.get('/api/forecast/daily', function(req, res) {
     });
 });
 
+app.get('/api/products', function(req, res) {
+    request({
+        url: 'https://api.eu.apiconnect.ibmcloud.com/edmundsheeukibmcom-apic-demo/threads/products/v1/product',
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Accept": "application/json"
+        }
+    }, function(err, req, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.send(data);
+        }
+    });
+})
+
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
     // print a message when the server starts listening
