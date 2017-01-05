@@ -2,23 +2,23 @@ var app = new Vue({
     el: '#app',
     data: {
         products: [{
-            name: 1
+            name: ""
         }, {
-            name: 2
+            name: ""
         }, {
-            name: 3
+            name: ""
         }, {
-            name: 4
+            name: ""
         }, {
-            name: 5
+            name: ""
         }, {
-            name: 6
+            name: ""
         }, {
-            name: 7
+            name: ""
         }, {
-            name: 8
+            name: ""
         }, {
-            name: 9
+            name: ""
         }],
         selected: "",
         forecast: [{

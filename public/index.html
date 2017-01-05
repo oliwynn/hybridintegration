@@ -25,7 +25,7 @@
                 <p>{{day.dow}} <span><img class="weather-icon" :src="day.iconLink"></span> {{day.high}} / {{day.low}}</p>
             </div>
             <div class="pull-right col-md-3 text-center">
-                <select id="weather_presets" name="weather_presets" v-model="selected" v-on:change="getWeather">
+                <select class="text-center" id="weather_presets" name="weather_presets" v-model="selected" v-on:change="getWeather">
 					<option value="42.34,-75.18">New York</option>
 					<option value="45.43,-75.68">Ottawa</option>
 					<option value="51.51,0.13">London</option>
