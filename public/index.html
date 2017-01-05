@@ -14,13 +14,12 @@
 
 <body>
     <div class="container-fluid" id="app">
-        <div id="demo"></div>
-        <button class="pull-right" v-on:click="getWeather">weatherAPI</button>
         <div class="banner"></div>
         <div class="context-bar">
             <div class="row">
+                <div class="col-md-9 text-center" id="weather"></div>
                 <div class="pull-right col-md-3 text-center">
-                    <select id="weather_presets" name="weather_presets" style="width:200px; height:40px; margin:0px; background-color:#B7D2DD; font-size:14pt; font-weight:bold;" onchange="">
+                    <select id="weather_presets" name="weather_presets" style="width:200px; height:40px; margin:0px; background-color:#B7D2DD; font-size:14pt; font-weight:bold;" v-on:change="getWeather">
 						<option value="42.34,-75.18">New York</option>
 						<option value="45.43,-75.68">Ottawa</option>
 						<option value="51.51,0.13">London</option>
@@ -49,23 +48,6 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="main.js"></script>
-    <script>
-        var x = document.getElementById("demo");
-
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
-
-        function showPosition(position) {
-            x.innerHTML = "Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude;
-        }
-        getLocation();
-    </script>
 </body>
 
 </html>

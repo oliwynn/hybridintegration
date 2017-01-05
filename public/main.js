@@ -23,24 +23,28 @@ var app = new Vue({
     },
     methods: {
         getWeather: function() {
-            weatherAPI("/api/forecast/daily", {
-                geocode: "51.51,0.13",
-                units: "m",
-                language: "en"
-            }, function(err, data) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    if (data.forecasts) {
-                        console.log(data.forecasts);
-                    } else {
-                        console.log('error!!!');
-                    }
-                }
-            });
+            fetchWeather(this.value)
         }
     }
 })
+
+function fetchWeather(geo) {
+    weatherAPI("/api/forecast/daily", {
+        geocode: geo,
+        units: "m",
+        language: "en"
+    }, function(err, data) {
+        if (err) {
+            console.log(err);
+        } else {
+            if (data.forecasts) {
+                console.log(data.forecasts);
+            } else {
+                console.log('error!!!');
+            }
+        }
+    });
+}
 
 
 function weatherAPI(path, qs, done) {
@@ -64,21 +68,20 @@ function weatherAPI(path, qs, done) {
         }
     });
 }
-/*
-weatherAPI("/api/forecast/daily", {
-    geocode: geocode,
-    units: units,
-    language: language
-}, function(err, data) {
-    if (err) {
-        showError('#daily_throbber', '#daily_error', '#daily_display', err);
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-        if (data.forecasts) {
-            showDisplay('#daily_throbber', '#daily_error', '#daily_display');
-            displayDaily(data);
-        } else {
-            showError('#daily_throbber', '#daily_error', '#daily_display', "Data missing");
-        }
+        x.innerHTML = "Geolocation is not supported by this browser.";
     }
-});
-*/
+}
+
+function showPosition(position) {
+    var geo = position.coords.latitude + ',' + position.coords.longitude;
+    console.log(geo);
+    fetchWeather(geo);
+}
+getLocation();
