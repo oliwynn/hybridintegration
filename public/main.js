@@ -36,7 +36,9 @@ var app = new Vue({
             iconLink: "",
             high: "",
             low: ""
-        }]
+        }],
+        promoHeader: "New trends for 2017",
+        promoDetails: "Get the latest threads and start your year in style..."
     },
     methods: {
         getWeather: function() {

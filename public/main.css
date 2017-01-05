@@ -12,28 +12,35 @@
 
 .context-bar {
     height: 40px;
-    background: grey;
+    background: #AAA;
+    margin: 0;
 }
 
 .underneath {
-    height: calc(100vh - 400px);
-    background: blue;
+    background: #DDD;
+    margin: 0;
+    padding: 0;
 }
 
 .history {
-    background: red;
+    background: #DDD;
     height: 100%;
+    height: calc(100vh - 400px);
 }
 
 .products {
-    background: yellow;
+    background: #FFF;
     height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
 }
 
 .product-block {
-    line-height: 250px;
+    line-height: 230px;
     font-size: 10vh;
     height: 250px;
+    padding: 10px;
 }
 
 .weather-icon {
@@ -49,4 +56,39 @@
 .forecasts {
     height: 40px;
     line-height: 40px;
+}
+
+.product-box {
+    height: 100%;
+    background: grey;
+    padding: 10px;
+    color: white;
+}
+
+.banner-promo {
+    color: white;
+    padding-left: 50px;
+    padding-top: 200px;
+}
+
+.banner-promo h4 {
+    margin: 0;
+    font-size: 5em;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.banner-promo p {
+    margin: 0;
+    font-size: 2.5em;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+#weather_presets {
+    font-size: 20px;
+    height: 40px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    -webkit-border-radius: 0px;
+    -webkit-appearance: none;
 }
